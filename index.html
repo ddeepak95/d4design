@@ -40,6 +40,40 @@ a:hover{text-decoration:underline}
 .main:hover .buddha .head{-webkit-animation:animTopBottom 0.25s infinite;animation:animTopBottom 0.25s infinite}
 @-webkit-keyframes animTopBottom{0%,100%{-webkit-transform:translateY(0);transform:translateY(0)}50%{-webkit-transform:translateY(-5px);transform:translateY(-5px)}}
 @keyframes animTopBottom{0%,100%{-webkit-transform:translateY(0);transform:translateY(0)}50%{-webkit-transform:translateY(-5px);transform:translateY(-5px)}}
+#progressbar{
+  height: 16px;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  width: 300px;
+  background: rgba(232, 228, 228, 0.5);
+  border-radius: 10px;
+  margin: -20px 0 0 -150px;
+  padding: 2px;
+}
+#loading{
+  transition: all 500ms ease;
+  height: 10px;
+  width: calc(100% - 10px);
+  border-radius: 8px;
+  background: #f9ab69;
+  position: absolute;
+  margin: 3px;
+  display: inline-block;
+  animation: load 3s ease-in;
+}
+#load{
+  font-family: Arial;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -30px;
+}
+
+@keyframes load{
+  0%{
+    width: 2%;
+  }
+}
       </style>
 <script>
 function loaded()
@@ -55,6 +89,9 @@ function CloseMe()
 </head>
 <body onLoad="loaded()">
 <p class="tekst">Thank you for your interest!</p>
+<div id="progressbar">
+  <span id="loading"></span>
+</div>
   <div class="outer">
 <div class="middle">
 <div class="main clearfix">
